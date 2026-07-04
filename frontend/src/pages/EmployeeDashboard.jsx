@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "../components/EmployeeDahsboard/sidebar";
+import Sidebar from "../components/EmployeeDahsboard/Sidebar";
 import {Outlet } from 'react-router-dom'
 import Navbar from '../components/dashboard/Navbar'
 
