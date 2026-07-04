@@ -312,7 +312,7 @@ const LandingPage = () => {
           <div className="space-y-8 flex flex-col items-center">
             {/* Spinning Neon Ring */}
             <div className="relative w-32 h-32 flex items-center justify-center">
-              <div className="absolute inset-0 rounded-full border-2 border-slate-900 border-t-[#6C63FF] border-r-[#22D3EE] animate-spin" />
+              <div className="absolute inset-0 rounded-full border-2 border-[#141b2d] border-t-[#6C63FF] border-r-[#22D3EE] animate-spin" />
               <div className="w-24 h-24 rounded-full flex items-center justify-center">
                 <img src="/logo3.png" alt="StaffMatrix Logo" className="w-full h-full object-contain drop-shadow-md" />
               </div>
@@ -325,7 +325,7 @@ const LandingPage = () => {
               </div>
 
               {/* Horizontal fill bar */}
-              <div className="w-48 h-1 bg-slate-950 border border-slate-900/50 rounded-full overflow-hidden">
+              <div className="w-48 h-1 bg-[#141b2d] border border-white/5 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-[#6C63FF] to-[#22D3EE] rounded-full transition-all duration-100"
                   style={{ width: `${preloadProgress}%` }}
