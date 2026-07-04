@@ -405,12 +405,12 @@ const LandingPage = () => {
           </div>
 
           <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-400">
-            <button onClick={() => scrollToSection('features')} className="hover:text-white transition-colors cursor-pointer bg-transparent border-none">Features</button>
-            <button onClick={() => scrollToSection('solutions')} className="hover:text-white transition-colors cursor-pointer bg-transparent border-none">Solutions</button>
-            <button onClick={() => scrollToSection('security')} className="hover:text-white transition-colors cursor-pointer bg-transparent border-none">Security</button>
-            <button onClick={() => scrollToSection('pricing')} className="hover:text-white transition-colors cursor-pointer bg-transparent border-none">Pricing</button>
-            <button onClick={() => scrollToSection('about')} className="hover:text-white transition-colors cursor-pointer bg-transparent border-none">About</button>
-            <button onClick={() => scrollToSection('contact')} className="hover:text-white transition-colors cursor-pointer bg-transparent border-none">Contact</button>
+            <button onClick={() => scrollToSection('features')} className="hover:text-[#6C63FF] transition-colors cursor-pointer bg-transparent border-none">Features</button>
+            <button onClick={() => scrollToSection('solutions')} className="hover:text-[#6C63FF] transition-colors cursor-pointer bg-transparent border-none">Solutions</button>
+            <button onClick={() => scrollToSection('security')} className="hover:text-[#6C63FF] transition-colors cursor-pointer bg-transparent border-none">Security</button>
+            <button onClick={() => scrollToSection('pricing')} className="hover:text-[#6C63FF] transition-colors cursor-pointer bg-transparent border-none">Pricing</button>
+            <button onClick={() => scrollToSection('about')} className="hover:text-[#6C63FF] transition-colors cursor-pointer bg-transparent border-none">About</button>
+            <button onClick={() => scrollToSection('contact')} className="hover:text-[#6C63FF] transition-colors cursor-pointer bg-transparent border-none">Contact</button>
           </nav>
 
           <div className="flex items-center space-x-4">
