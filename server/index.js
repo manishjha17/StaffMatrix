@@ -1,7 +1,5 @@
 import express from 'express'
 import cors from 'cors'
-import User from './models/User.js';
-import bcrypt from 'bcrypt';
 import helmet from 'helmet'
 import rateLimit from 'express-rate-limit'
 import authRouter from './routes/auth.js'
@@ -55,30 +53,6 @@ app.use('/api/dashboard',dasboardRouter)
 app.use('/api/attendance', attendanceRouter)
 app.use('/api/announcement', announcementRouter)
 app.use('/api/support', supportRouter)
-
-// Temporary seeder route
-app.get('/seed-admin', async (req, res) => {
-    try {
-        const email = process.env.DEFAULT_SUPERADMIN_EMAIL;
-        const password = process.env.DEFAULT_SUPERADMIN_PASSWORD;
-
-        if (!email || !password) {
-            return res.send("Error: Missing env variables");
-        }
-
-        const hashPassword = await bcrypt.hash(password, 10);
-        const newUser = new User({
-            name: "Super Admin",
-            email: email,
-            password: hashPassword,
-            role: "superadmin"
-        });
-        await newUser.save();
-        res.send("Admin account created successfully! You can now delete this route.");
-    } catch (error) {
-        res.send("Error: " + error.message);
-    }
-});
 
 app.listen(process.env.PORT,()=>{
     console.log(`server is running on port ${process.env.PORT}`)
