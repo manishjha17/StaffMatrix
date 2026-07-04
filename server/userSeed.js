@@ -5,10 +5,17 @@ import connectToDatabase from './db/db.js'
 const userRegister=async ()=>{
     connectToDatabase()
     try{
-        const hashPassword=await bcrypt.hash("superadmin",10)
+        const defaultEmail = process.env.DEFAULT_SUPERADMIN_EMAIL
+        const defaultPassword = process.env.DEFAULT_SUPERADMIN_PASSWORD
+
+        if (!defaultEmail || !defaultPassword) {
+            throw new Error("Missing DEFAULT_SUPERADMIN_EMAIL or DEFAULT_SUPERADMIN_PASSWORD in environment variables");
+        }
+
+        const hashPassword=await bcrypt.hash(defaultPassword,10)
         const newUser=new User({
             name:"Super Admin",
-            email:"superadmin@test.com",
+            email: defaultEmail,
             password:hashPassword,
             role:"superadmin"
         })
