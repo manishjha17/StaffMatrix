@@ -27,8 +27,20 @@ import { useTheme } from '../context/ThemeContext';
 
 const LandingPage = () => {
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { user, login } = useAuth();
   const { theme, toggleTheme } = useTheme();
+
+  useEffect(() => {
+    if (user) {
+      if (user.role === 'superadmin') {
+        navigate('/superadmin-dashboard');
+      } else if (user.role === 'admin') {
+        navigate('/admin-dashboard');
+      } else {
+        navigate('/employee-dashboard');
+      }
+    }
+  }, [user, navigate]);
 
   // Login form state
   const [email, setEmail] = useState('');
